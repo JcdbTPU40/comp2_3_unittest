@@ -21,5 +21,13 @@ int sum(int num, int* array)
 // num個の整数の平均を得る
 int average(int num, int* array)
 {
-	return 0x7fffffff;// ■未実装
+	// オーバーフロー防止のため、long long型で合計を計算
+	long long total = 0;
+
+	for (int i = 0; i < num; i++)
+	{
+		total += array[i];
+	}
+
+	return (int)(total / num);
 }
